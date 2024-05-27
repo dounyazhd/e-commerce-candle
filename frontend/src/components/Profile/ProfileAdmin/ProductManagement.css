@@ -1,0 +1,361 @@
+.content-products {
+    margin-top: 30px;
+    width: 80%;
+}
+
+.content-products {
+    width: 80%;
+}
+
+.content-products .title {
+    display: ruby-text;
+    height: 80px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.content-products .title .fa-users {
+    font-size: 30px;
+}
+
+.content-products .title h2 {
+    font-size: 30px;
+}
+
+.content .product-list {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+    margin-top: 0 !important;
+    border-radius: 10px;
+    height: 700px;
+}
+
+.product-list thead {
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0;
+    padding: 10px;
+    z-index: 2;
+}
+
+.product-list {
+    overflow-y: auto;
+}
+
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: auto;
+}
+
+.product-list th, .product-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    margin: auto;
+}
+
+td img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+td i {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    font-size: 30px;
+    margin-top: 5px !important;
+    cursor: pointer;
+    position: relative;
+}
+
+td #icon-edit {
+    color: #1d773d;
+    margin-right: 10px;
+}
+
+td #icon-edit:hover {
+    color: #73c898;
+}
+
+td #icon-edit:hover::after {
+    content: 'Edit';
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    position: absolute;
+    top: -30%;
+    right: 100%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+td #icon-edit:hover::after {
+    opacity: 1;
+}
+
+td #icon-delete {
+    color: #9f1010;
+}
+
+td #icon-delete:hover {
+    color: #ed7a7a;
+}
+
+td #icon-delete:hover::after {
+    content: 'Delete';
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    position: absolute;
+    top: -40%;
+    right: 100%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+td #icon-delete:hover::after {
+    opacity: 1;
+}
+
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal {
+    background-color: white;
+    padding: 50px !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70vh;
+    position: relative;
+}
+
+.modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.fa-times {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #9f1010;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-item {
+    position: relative;
+    margin-top: 10px;
+}
+
+.image-item img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.image-item button {
+    position: absolute;
+    width: auto;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #9E5AC7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #efcaff;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+.button-create-delete {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.button-create-delete .button-create {
+    background-color: #1d773d;
+    margin-right: 10px;
+    height: 45px;
+}
+
+.button-create-delete .button-create:hover {
+    background-color: #73c898;
+}
+
+.button-create-delete .button-delete {
+    background-color: #9f1010;
+    height: 45px;
+}
+
+.button-create-delete .button-delete:hover {
+    background-color: #ed7a7a;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+.file-input-label {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.31);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.file-input-label i {
+    font-size: 20px;
+    color: white;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Media queries pour responsive design */
+
+/* Pour les écrans de 1024px et moins */
+@media only screen and (max-width: 1024px) {
+    .content-products {
+        width: 90%;
+    }
+
+    .content .product-list {
+        width: 95%;
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content-products {
+        width: 90vh;
+        margin: auto;
+        font-size: 0.7rem;
+    }
+
+    .content .product-list {
+        width: 100%;
+        height: 500px;
+    }
+
+    .content-products .title h2 {
+        font-size: 24px;
+    }
+
+    .button-create-delete .button-create, .button-create-delete .button-delete {
+        font-size: 0.7rem;
+    }
+}
+
+

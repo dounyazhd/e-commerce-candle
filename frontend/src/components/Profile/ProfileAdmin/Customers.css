@@ -1,0 +1,110 @@
+.content {
+    display: flex;
+}
+
+.content h2 {
+    margin-left: 1%;
+    font-weight: normal;
+}
+
+.chart-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: 310px;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 30px !important;
+}
+
+.chart-container h3 {
+    padding-top: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.title {
+    display: ruby-text;
+    height: 80px;
+    color: rgba(255, 255, 255, 0.9);
+    top: 0;
+    background-color: transparent;
+    z-index: 1
+}
+
+.title .fa-users {
+    font-size: 30px;
+}
+
+.title h2 {
+    font-size: 30px;
+}
+
+.content-customers {
+    width: 80%;
+}
+
+.content .customer-list {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+    margin-top: 0 !important;
+    border-radius: 10px;
+    height: 450px;
+}
+
+.customer-list thead {
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0;
+    padding: 10px;
+    z-index: 2;
+}
+
+.customer-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.customer-list table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: auto;
+}
+
+.customer-list th, .customer-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .content h2 {
+        margin-left: 0;
+        font-weight: normal;
+    }
+
+    .chart-container {
+        width: 90%;
+        height: max-content;
+    }
+
+    .title {
+        height: auto;
+    }
+
+    .title h2, .title .fa-users {
+        font-size: 1rem;
+    }
+
+    .content .customer-list {
+        width: 90%;
+        margin: auto;
+        height: 330px;
+        font-size: 0.7rem;
+        overflow: auto;
+    }
+}

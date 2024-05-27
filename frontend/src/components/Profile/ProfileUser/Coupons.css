@@ -1,0 +1,38 @@
+.inactive-promotion {
+    opacity: 0.5;
+}
+
+.promotions-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.error {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.coupons-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.promotion-item {
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .promotions-container {
+        padding: 10px;
+    }
+
+    .promotion-item {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}

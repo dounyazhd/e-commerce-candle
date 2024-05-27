@@ -1,0 +1,32 @@
+.order-list {
+    overflow-y: auto;
+    width: 90%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 50px !important;
+}
+
+tbody tr {
+    text-align: center;
+}
+
+.order-list .button-details {
+    width: 90%;
+}
+
+.order-list .button-cancel {
+    width: 90%;
+    background-color: #9f1010;
+}
+
+
+@media (max-width: 768px) {
+    .order-list {
+        width: 100%;
+    }
+
+    .order-list .button-details,
+    .order-list .button-cancel {
+        font-size: 14px;
+    }
+}

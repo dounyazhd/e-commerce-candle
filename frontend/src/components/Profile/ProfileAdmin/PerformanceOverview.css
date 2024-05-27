@@ -1,0 +1,384 @@
+.navbar-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*********************************************Logo*/
+.menu-icon {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.bottom-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.bottom-profile ul {
+    display: inline-flex;
+}
+
+.bottom-profile .navbar-nav-profile {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    margin-left: 100px;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile .nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile {
+    margin-right: 100px;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile:last-child {
+    margin-right: 0;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile .nav-link:hover {
+    color: #9E5AC7;
+}
+
+/*********************************************Icons*/
+.bottom-profile .icons-profile {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+}
+
+.bottom-profile .icons-profile li i {
+    font-size: 30px;
+    color: black;
+}
+
+.bottom-profile .icons-profile li {
+    margin-right: 15px;
+}
+
+.bottom-profile .icons-profile li:last-child {
+    margin-right: 0;
+}
+
+.bottom-profile .icons-profile li i:hover {
+    color: #9E5AC7;
+}
+
+
+.dashboard-admin {
+    width: 20%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px;
+}
+
+.dashboard-admin .top {
+    width: 80px;
+    height: 80px;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-admin .top img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dashboard-admin .navbar-nav .nav-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    list-style: none;
+    width: 90%;
+    height: 40px;
+    margin-inline-start: auto;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    align-content: center;
+    border-radius: 20px 0 0 50px;
+}
+
+.dashboard-admin .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.dashboard-admin .log-out {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 80px !important;
+    text-decoration: none;
+    text-align: center;
+    color: #9f1010;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+.profit {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 35%;
+    height: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profit h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profit h3 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.profit .chart {
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+.form-container {
+    height: 600px;
+    overflow-y: scroll;
+    width: 35%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-container form {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+}
+
+.form-container input[type="date"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-container button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.predictions-container {
+    margin-top: 20px;
+}
+
+.predictions-container h3 {
+    margin-bottom: 10px;
+}
+
+.predictions-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.predictions-container li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.predictions-container p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.dashboard-admin {
+    position: relative;
+}
+
+.menu-icon-profile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* Pour les écrans de 768px et moins */
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        width: max-content;
+        position: sticky;
+        z-index: 1001;
+        margin: auto;
+        margin-top: 10px !important;
+    }
+
+    .navbar-nav-profile {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+    }
+
+    .nav-item-profile {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-profile .bottom {
+        display: ruby;
+    }
+
+    .navbar-profile .bottom-profile .navbar-nav-profile {
+        width: 80%;
+        margin-left: 10px;
+        top: 0;
+        text-align: center;
+    }
+
+    .navbar-profile .bottom-profile .navbar-nav-profile .nav-item-profile .nav-link, .bottom-profile .icons-profile li i {
+        font-size: 1rem;
+    }
+
+    .bottom-profile .navbar-nav-profile .nav-item-profile {
+        margin-right: 0;
+    }
+
+    .bottom-profile .icons-profile {
+        right: 0;
+        margin-right: 10px;
+        top: 0;
+    }
+
+    .content {
+        margin-top: 50px;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav.show {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        width: 100vh;
+        background-color: aliceblue;
+        height: 100vh;
+        margin-top: -210px;
+        padding-top: 150px;
+    }
+
+    .dashboard-admin {
+        width: 11%;
+        z-index: 1000;
+    }
+
+    .dashboard-admin .top {
+        margin-left: 2px;
+    }
+
+    .content-customers {
+        width: 100%;
+        margin: auto;
+    }
+
+    .profit, .form-container {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px !important;
+        height: 300px;
+        overflow-y: auto;
+    }
+
+    .content-customers .profit h2 {
+        margin-left: 0;
+        font-weight: normal;
+        font-size: 1.5rem;
+    }
+
+    .chart canvas {
+        width: 100%;
+    }
+
+
+}

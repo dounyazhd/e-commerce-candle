@@ -1,0 +1,248 @@
+.dashboard-user {
+    display: flex;
+    text-align: center;
+    width: 90%;
+    height: 150px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.top-user {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.top-user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.navbar-nav-user {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-nav-user .nav-item-user-active {
+    width: max-content;
+    padding: 15px 20px;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
+
+.navbar-nav-user .nav-item-user-active a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-nav-user .nav-item-user {
+    width: max-content;
+    padding: 15px 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.navbar-nav-user .nav-item-user a {
+    text-decoration: none;
+    color: black;
+}
+
+.information-user {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px !important;
+    margin-bottom: 25px !important;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+.information-user h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.information-user p {
+    margin-bottom: 10px;
+}
+
+.information-user button {
+    width: 200px;
+    padding: 8px 15px;
+    border-radius: 3px;
+    background-color: rgb(158, 90, 199);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.information-user button:hover {
+    background-color: #efcaff;
+}
+
+
+.update-user {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+
+.update-user .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.update-user .modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.update-user .modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-user .modal label {
+    margin-bottom: 5px;
+}
+
+.update-user .modal input {
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.update-user .modal button {
+    width: max-content;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.31);
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.update-user .modal button:hover {
+    background-color: #9f1010;
+}
+
+.update-user .modal p {
+    margin-top: 10px;
+    color: red;
+}
+
+.password-input-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.password-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    height: 40px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.password-input-container input {
+    margin-top: 20px !important;
+    height: 40px;
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.password-input-container button {
+    height: 100%;
+    margin-top: 0 !important;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.password-input-container button i {
+    font-size: 1rem;
+}
+
+.password-input-container button:focus {
+    outline: none;
+}
+
+.update-user .modal .update-button {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+.log-out {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+    background-color: darkred;
+    height: 40px;
+    width: max-content;
+    padding: 10px 50px;
+    margin: auto;
+    border-radius: 8px;
+    margin-bottom: 50px !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .dashboard-user {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+
+    .navbar-nav-user {
+        width: 100%;
+    }
+
+    .navbar-nav-user .nav-item-user-active,
+    .navbar-nav-user .nav-item-user {
+        width: 25%;
+    }
+
+    .information-user button {
+        width: 100%;
+    }
+
+    .password-input-container {
+        max-width: 100%;
+    }
+}

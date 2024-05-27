@@ -1,0 +1,63 @@
+.content .order-list {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 75%;
+    margin: auto;
+    border-radius: 10px;
+    height: 700px;
+}
+
+.order-list thead {
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0;
+    padding: 10px;
+    z-index: 2;
+}
+
+.order-list {
+    overflow-y: auto;
+}
+
+.order-list table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: auto;
+}
+
+.order-list th, .order-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    margin: auto;
+}
+
+.button-details {
+    width: 70%;
+    margin-top: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .content .order-list {
+        width: 90VH;
+        height: 90vh;
+        overflow-y: auto;
+        font-size: 0.7rem;
+    }
+
+    .order-list th, .order-list td {
+        width: auto;
+        padding: 6px;
+    }
+
+    .button-details {
+        width: 80%;
+        padding: 0;
+    }
+
+    td p {
+        font-size: 0.7rem !important;
+    }
+}

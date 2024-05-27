@@ -1,0 +1,268 @@
+.product-details {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.product-details-main {
+  display: flex;
+  gap: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.main-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-thumbnails {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-height: 100px;
+}
+
+.thumbnails-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  width: auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.thumbnail-image:hover {
+  transform: scale(1.1);
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding-right: 8px;
+}
+
+.product-info h2 {
+  font-size: xxx-large;
+  font-weight: 500;
+  margin: 0;
+}
+
+.product-info p {
+    margin: 0;
+    width: 90%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #1E1E1E;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin-top: 30px !important;
+  font-size: 1.5em !important;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  height: 40px;
+}
+
+.quantity-selector button {
+    width: 30px;
+    height: 100%;
+    background-color: #9E5AC7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 !important;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.quantity-selector input {
+  font-size: 22px !important;
+  border: none !important;
+  text-align: end;
+  background-color: transparent;
+}
+
+.product-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.add-to-cart, .add-to-wishlist {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.add-to-cart {
+  background-color: #9E5AC7;
+  color: white;
+    font-size: 18px;
+}
+
+.add-to-wishlist {
+  background-color: transparent;
+  color: black;
+    font-size: 18px;
+}
+
+.product-reviews {
+  margin-top: 10px;
+}
+
+.comments-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  height: 300px;
+  overflow: auto;
+}
+
+.comments-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+  margin: auto;
+  font-size: 24px;
+  margin-bottom: 10px !important;
+}
+
+.comment {
+  margin-bottom: 15px;
+}
+
+.comment p {
+  margin: 0;
+  padding: 5px;
+  background-color: #fff;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+.comment p strong {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-right: 5px;
+  letter-spacing: 1px;
+}
+
+.no-comments {
+  font-style: italic;
+  color: #888;
+}
+
+
+
+
+
+
+.related-products {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+.related-products h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.related-products-list {
+  display: flex;
+  gap: 20px;
+  /*overflow-x: scroll;*/
+}
+
+.related-product {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.related-product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.related-product h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.related-product p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #e91e63;
+}
+
+@media only screen and (max-width: 768px) {
+  .related-products-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .related-product {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .related-product {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .related-product {
+    width: 20%;
+  }
+}
+
+
+
+
