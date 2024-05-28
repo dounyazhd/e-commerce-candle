@@ -88,17 +88,35 @@ def create_product(request):
 
 
 @csrf_exempt
-def add_comment(request, product_id):
+def add_comment(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         comment = data.get('comment')
         username = data.get('username', 'Unknown')
-        existing_product = db.products.find_one({'_id': ObjectId(product_id)})
-        existing_comments = existing_product.get('comments', [])
-        existing_comments.append({'username': username, 'comment': comment})
-        db.products.update_one({'_id': ObjectId(product_id)}, {'$set': {'comments': existing_comments}})
+        order_id = data.get('order_id')
+        product_id = data.get('product_id')
+
+        existing_order = db.orders.find_one({'_id': ObjectId(order_id)})
+        if not existing_order:
+            return JsonResponse({'message': 'Order not found'}, status=404)
+
+        product_in_order = next((p for p in existing_order['products'] if str(p['_id']) == product_id), None)
+        if not product_in_order:
+            return JsonResponse({'message': 'Product not found in the order'}, status=404)
+
+        existing_comments = product_in_order.get('comments', [])
+        if any(c['username'] == username for c in existing_comments):
+            return JsonResponse({'message': 'You have already commented on this product in this order'}, status=400)
+
+        new_comment = {'username': username, 'comment': comment}
+        existing_comments.append(new_comment)
+        db.orders.update_one(
+            {'_id': ObjectId(order_id), 'products._id': ObjectId(product_id)},
+            {'$set': {'products.$.comments': existing_comments}}
+        )
         return JsonResponse({'message': 'Comment added successfully!'})
     return JsonResponse({'message': 'Method not allowed'}, status=405)
+
 
 
 nltk.download('vader_lexicon')

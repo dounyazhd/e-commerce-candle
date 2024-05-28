@@ -3,6 +3,7 @@ import './PersonalInformation.css';
 import {Helmet} from "react-helmet";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
+import NavBarProfile from "../../NavBarProfile/NavBarProfile";
 
 const PersonalInformation = () => {
 
@@ -101,50 +102,7 @@ const PersonalInformation = () => {
                 <title>Personal Information </title>
             </Helmet>
 
-            <nav className="navbar" style={{
-                marginBottom: '50px',
-                marginTop: '50px',
-            }}>
-
-                <div className="bottom">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link to="/" className="nav-link">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/shop" className="nav-link">Shop</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/aboutus" className="nav-link">About Us</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/faqs" className="nav-link">FAQs</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/contact" className="nav-link">Contact</Link>
-                        </li>
-                    </ul>
-
-                    <ul className="icons">
-                        <li>
-                            <Link to="/cart">
-                                <i className="fas fa-shopping-cart"></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/wishlist">
-                                <i className="fas fa-heart"></i>
-                            </Link>
-                        </li>
-                        <li style={{pointerEvents: 'none'}}>
-                            <Link to="/profile">
-                                <i className="fas fa-user" style={{color: '#9E5AC7'}}></i>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
+            <NavBarProfile/>
 
             <nav className='dashboard-user'>
 

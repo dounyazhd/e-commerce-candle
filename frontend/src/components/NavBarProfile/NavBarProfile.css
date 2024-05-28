@@ -1,0 +1,138 @@
+.navbar-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/*********************************************Logo*/
+.bottom-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.bottom-profile ul {
+    display: inline-flex;
+}
+
+.bottom-profile .navbar-nav-profile {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    margin-left: 100px;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile .nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile {
+    margin-right: 100px;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile:last-child {
+    margin-right: 0;
+}
+
+.bottom-profile .navbar-nav-profile .nav-item-profile .nav-link:hover {
+    color: #9E5AC7;
+}
+
+/*********************************************Icons*/
+.bottom-profile .icons-profile {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+}
+
+.bottom-profile .icons-profile li i {
+    font-size: 30px;
+    color: black;
+}
+
+.bottom-profile .icons-profile li {
+    margin-right: 15px;
+}
+
+.bottom-profile .icons-profile li:last-child {
+    margin-right: 0;
+}
+
+.bottom-profile .icons-profile li i:hover {
+    color: #9E5AC7;
+}
+
+/* Pour les écrans de 768px et moins */
+@media only screen and (max-width: 768px) {
+    .navbar-profile {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .navbar-nav-profile {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-item-profile {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-profile .bottom {
+        display: ruby;
+    }
+
+    .navbar-profile .bottom-profile .navbar-nav-profile {
+        width: 80%;
+        margin-left: 10px;
+        top: 0;
+        text-align: center;
+    }
+
+    .navbar-profile .bottom-profile .navbar-nav-profile .nav-item-profile .nav-link, .bottom-profile .icons-profile li i {
+        font-size: 1rem;
+    }
+
+    .bottom-profile .navbar-nav-profile .nav-item-profile {
+        margin-right: 0;
+    }
+
+    .bottom-profile .icons-profile {
+        right: 0;
+        margin-right: 10px;
+        top: 0;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav.show {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        width: 100vh;
+        background-color: aliceblue;
+        height: 100vh;
+        margin-top: -210px;
+        padding-top: 150px;
+    }
+
+}

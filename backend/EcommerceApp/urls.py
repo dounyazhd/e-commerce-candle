@@ -2,11 +2,10 @@ from django.urls.conf import path
 from EcommerceApp import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
 
     path('create_product/', views.create_product, name='create_product'),
 
-    path('product/<str:product_id>/add_comment/', views.add_comment, name='add_comment'),
+    path('product/add_comment/', views.add_comment, name='add_comment'),
     path('comments_product/<str:product_id>/', views.comments_product, name='comments_product'),
     path('get_related_products/', views.get_related_products, name='get_related_products'),
 
