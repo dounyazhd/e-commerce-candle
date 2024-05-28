@@ -3,6 +3,8 @@ from EcommerceApp import views
 
 urlpatterns = [
 
+    path('get_totals/', views.get_totals, name='get_totals'),
+
     path('create_product/', views.create_product, name='create_product'),
 
     path('product/add_comment/', views.add_comment, name='add_comment'),

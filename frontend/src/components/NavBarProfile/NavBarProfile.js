@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './NavBarProfile.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -6,6 +6,22 @@ import Cookies from 'js-cookie';
 
 const NavBarProfile = () => {
     const navigate = useNavigate();
+    const [totalCartItems, setTotalCartItems] = useState(0);
+    const [totalWishlistItems, setTotalWishlistItems] = useState(0);
+
+    useEffect(() => {
+        const fetchTotals = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/get_totals/');
+                setTotalCartItems(response.data.total_carts);
+                setTotalWishlistItems(response.data.total_wishlists);
+            } catch (error) {
+                console.error('Failed to fetch totals:', error);
+            }
+        };
+
+        fetchTotals();
+    }, []);
 
     const getUserRole = async (userId) => {
         try {
@@ -56,16 +72,21 @@ const NavBarProfile = () => {
                         </li>
                     </ul>
                     <ul className="icons-profile">
+
                         <li>
                             <Link to="/cart">
                                 <i className="fas fa-shopping-cart"></i>
+                                {totalCartItems > 0 && <span className="total-items">{totalCartItems}</span>}
                             </Link>
                         </li>
+
                         <li>
                             <Link to="/wishlist">
                                 <i className="fas fa-heart"></i>
+                                {totalWishlistItems > 0 && <span className="total-items">{totalWishlistItems}</span>}
                             </Link>
                         </li>
+
                         <li style={{pointerEvents: 'none'}}>
                             <Link to="/profile" onClick={handleUserIconClick}>
                                 <i className="fas fa-user" style={{color: '#9E5AC7'}}></i>

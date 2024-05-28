@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
 import axios from "axios";
 import NavBarProfile from "../../NavBarProfile/NavBarProfile";
+import TotalCard from "./TotalCard";
 
 const PerformanceOverview = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +14,24 @@ const PerformanceOverview = () => {
     const toggleMenuAdmin = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    //*************************************************************************//
+
+    const [totals, setTotals] = useState({});
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/get_totals/')
+            .then(response => {
+                setTotals(response.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching totals:', error);
+                setLoading(false);
+            });
+    }, []);
+
+    //***************************************************************************//
 
     const [date, setDate] = useState('');
     const [predictions, setPredictions] = useState([]);
@@ -129,45 +148,78 @@ const PerformanceOverview = () => {
 
                 <div className="content-customers">
 
-                    <div className="profit">
-                        <h2>Monthly Profits</h2>
-                        <div className="chart">
-                            <Bar data={data} options={options} style={{width: '100%'}}/>
+                    <div className="performance-overview-container">
+                        <div className="card-grid">
+                            <TotalCard
+                                title="Total Customers"
+                                value={totals.total_users}
+                                description="Increase in Customers"
+                                iconClassName="fas fa-users"
+                            />
+                            <TotalCard
+                                title="Products"
+                                value={totals.total_products}
+                                description="Total number of products available"
+                                iconClassName="fas fa-box"
+                            />
+                            <TotalCard
+                                title="Different Categories"
+                                value={totals.total_categories}
+                                description="Total number of categories in app"
+                                iconClassName="fas fa-list"
+                            />
+                            <TotalCard
+                                title="Total Orders"
+                                value={totals.total_orders}
+                                description="Total number of orders"
+                                iconClassName="fas fa-shopping-cart"
+                            />
                         </div>
-                        <h3>Total Profit: {totalProfit}</h3>
                     </div>
 
-                    <div className="form-container">
-                        <h2>Sales Prediction</h2>
-                        <form onSubmit={handleSubmitPrediction}>
-                            <label>Date : (Choose Date Here)</label>
-                            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required/>
-                            <button type="submit">Predict</button>
-                        </form>
-                        {predictions.length > 0 && (
-                            <div className="predictions-container">
-                                <h3>Predictions for {date}</h3>
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th>Product Name</th>
-                                        <th>Predicted Units Sold</th>
-                                        <th>Predicted Profit</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {predictions.map(prediction => (
-                                        <tr key={prediction.product_id}>
-                                            <td>{prediction.name}</td>
-                                            <td>{prediction.predicted_units_sold}</td>
-                                            <td>{prediction.predicted_profit}</td>
-                                        </tr>
-                                    ))}
-                                    </tbody>
-                                </table>
+                    <div className="content-performance">
+
+                        <div className="profit">
+                            <h2>Monthly Profits</h2>
+                            <div className="chart">
+                                <Bar data={data} options={options} style={{width: '100%'}}/>
                             </div>
-                        )}
-                        {error && <p>{error}</p>}
+                            <h3>Total Profit: {totalProfit}</h3>
+                        </div>
+
+                        <div className="form-container">
+                            <h2>Sales Prediction</h2>
+                            <form onSubmit={handleSubmitPrediction}>
+                                <label>Date : (Choose Date Here)</label>
+                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required/>
+                                <button type="submit">Predict</button>
+                            </form>
+                            {predictions.length > 0 && (
+                                <div className="predictions-container">
+                                    <h3>Predictions for {date}</h3>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Predicted Units Sold</th>
+                                            <th>Predicted Profit</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {predictions.map(prediction => (
+                                            <tr key={prediction.product_id}>
+                                                <td>{prediction.name}</td>
+                                                <td>{prediction.predicted_units_sold}</td>
+                                                <td>{prediction.predicted_profit}</td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
+                            {error && <p>{error}</p>}
+
+                        </div>
 
                     </div>
 

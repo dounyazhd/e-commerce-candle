@@ -38,10 +38,38 @@ from db_connection import db
 
 import spacy
 
-from django.shortcuts import render
-
 
 nlp = spacy.load("en_core_web_sm")
+
+
+#Total Performance
+@csrf_exempt
+def get_totals(request):
+    if request.method == 'GET':
+        try:
+            total_products = db.products.count_documents({})
+            total_users = db.users.count_documents({})
+            total_orders = db.orders.count_documents({})
+            total_carts = db.carts.count_documents({})
+            total_wishlists = db.wishlists.count_documents({})
+
+            distinct_categories = db.products.distinct("category")
+            total_categories = len(distinct_categories)
+
+            data = {
+                'total_products': total_products,
+                'total_users': total_users,
+                'total_orders': total_orders,
+                'total_carts': total_carts,
+                'total_wishlists': total_wishlists,
+                'total_categories': total_categories
+            }
+
+            return JsonResponse(data)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Method not allowed'}, status=405)
 
 
 #Products Database
